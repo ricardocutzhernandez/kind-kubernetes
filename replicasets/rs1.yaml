@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replica1
+  labels:
+    app: replica1
+    env: dev
+spec:
+  replicas: 12
+  selector:
+    matchLabels:
+      app: app1
+      env: dev
+  template:
+    metadata:
+      labels:
+        app: app1
+        env: dev
+    spec:
+      containers:
+      - name: cont1
+        image: nginx:alpine
