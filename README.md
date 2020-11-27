@@ -105,3 +105,12 @@
     ```
     kubectl rollout undo deployment <NOMBRE_DEPLOYMENT> --to-revision=<NUMERO_REVISION>
     ```
+### Services
+* Obteniendo los servicios
+    ```
+    kubectl get service <NOMBRE_SERVICIO> --show-labels
+    ```
+* Describiendo el servicio
+    ```
+    kubectl describe service <NOMBRE_SERVICIO>
+    ```
