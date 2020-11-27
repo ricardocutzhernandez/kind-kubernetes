@@ -75,3 +75,33 @@
     ```
     kubectl port-forward <POD_NAME> <POD_PORT>
     ```
+
+### Deployments
+* Create a new deployment
+    ```
+    kubectl apply -f <DEPLOYMENT FILE>
+    ```
+* Ver el status del deployment
+    ```
+    kubectl rollout status deployment <NOMBRE_DEPLOYMENT>
+    ```
+* Mostrar los labesl del deployment
+    ```
+    kubectl get deployment --show-labels
+    ```
+* Revisando el historico
+    ```
+    kubectl rollout history deployment <NOMBRE_DEPLOYMENT>
+    ```
+* Especificando el change cause
+    ```
+    kubectl apply -f deployment1.yaml --record
+    ```
+* Ver los cambios en una revision
+    ```
+    kubectl rollout history deployment <NOMBRE_DEPLOYMENT> --revision=<NUMERO_REVISION>
+    ```
+* Realizar un rollback
+    ```
+    kubectl rollout undo deployment <NOMBRE_DEPLOYMENT> --to-revision=<NUMERO_REVISION>
+    ```
